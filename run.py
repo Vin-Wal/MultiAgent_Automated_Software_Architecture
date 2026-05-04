@@ -1,5 +1,4 @@
 import argparse
-import os
 import subprocess
 import tempfile
 from datetime import datetime
@@ -63,16 +62,13 @@ with a one-sentence reason for each step.
 Top 5 risks with their mitigation strategy as a table.
 """
 
-_NODE_ENV = {**os.environ, "PATH": "/usr/local/bin:" + os.environ.get("PATH", "")}
-
-
 def _mmdc_run(definition: str, output_path: Path) -> subprocess.CompletedProcess:
     with tempfile.NamedTemporaryFile(suffix=".mmd", mode="w", delete=False) as f:
         f.write(definition)
         tmp = Path(f.name)
     result = subprocess.run(
         ["mmdc", "-i", str(tmp), "-o", str(output_path), "-b", "white"],
-        capture_output=True, text=True, env=_NODE_ENV,
+        capture_output=True, text=True,
     )
     tmp.unlink(missing_ok=True)
     return result
