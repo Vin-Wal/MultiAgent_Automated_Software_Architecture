@@ -133,6 +133,7 @@ def _extract_score(text: str) -> int:
 
 class CriticAgent:
     COLLECTION = "critic"
+    _SYSTEM = _SYSTEM
 
     def __init__(self, force_reindex: bool = False):
         self._collection = index_corpus(
@@ -141,14 +142,14 @@ class CriticAgent:
             force_reindex=force_reindex,
         )
 
-    def run(
+    def _build_prompt(
         self,
         requirements_output: str,
         arch_output: str,
         dm_output: str,
         use_rag: bool = True,
         prior_critique: str = "",
-    ) -> tuple[str, int]:
+    ) -> str:
         context_block = ""
         if use_rag:
             raw_context = _rag_query(self._collection, requirements_output, arch_output)
@@ -173,7 +174,7 @@ class CriticAgent:
                 </round_2_instructions>
             """).strip()
 
-        user_prompt = textwrap.dedent(f"""\
+        return textwrap.dedent(f"""\
             {context_block}
 
             {prior_outputs_block({
@@ -188,6 +189,14 @@ class CriticAgent:
 produce the comprehensive Architecture Review. Follow the schema exactly.
         """).strip()
 
-        critique = call_llm(_SYSTEM, user_prompt)
-        score = _extract_score(critique)
-        return critique, score
+    def run(
+        self,
+        requirements_output: str,
+        arch_output: str,
+        dm_output: str,
+        use_rag: bool = True,
+        prior_critique: str = "",
+    ) -> tuple[str, int]:
+        prompt   = self._build_prompt(requirements_output, arch_output, dm_output, use_rag, prior_critique)
+        critique = call_llm(_SYSTEM, prompt, max_tokens=3000)
+        return critique, _extract_score(critique)

@@ -91,6 +91,7 @@ def _multi_query_rag(collection, requirements: str, top_k: int = 4) -> str:
 
 class ArchitectureAgent:
     COLLECTION = "architecture"
+    _SYSTEM = _SYSTEM
 
     def __init__(self, force_reindex: bool = False):
         self._collection = index_corpus(
@@ -99,7 +100,7 @@ class ArchitectureAgent:
             force_reindex=force_reindex,
         )
 
-    def run(
+    def _build_prompt(
         self,
         requirements_output: str,
         use_rag: bool = True,
@@ -124,7 +125,7 @@ class ArchitectureAgent:
                 "\n</revision_instructions>"
             )
 
-        user_prompt = textwrap.dedent(f"""\
+        return textwrap.dedent(f"""\
             {context_block}
 
             {prior_outputs_block({"requirements": requirements_output})}
@@ -134,4 +135,14 @@ class ArchitectureAgent:
 produce the architecture document. Follow the XML schema exactly.
         """).strip()
 
-        return call_llm(_SYSTEM, user_prompt)
+    def run(
+        self,
+        requirements_output: str,
+        use_rag: bool = True,
+        prior_critique: str = "",
+    ) -> str:
+        return call_llm(
+            _SYSTEM,
+            self._build_prompt(requirements_output, use_rag, prior_critique),
+            max_tokens=3000,
+        )

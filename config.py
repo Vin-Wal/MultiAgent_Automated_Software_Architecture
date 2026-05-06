@@ -13,7 +13,7 @@ class Config:
 
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
     CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", "800"))
-    TOP_K: int = int(os.getenv("TOP_K", "5"))
+    TOP_K: int = int(os.getenv("TOP_K", "3"))
 
     DOCS_ROOT: Path = Path(os.getenv(
         "DOCS_ROOT",

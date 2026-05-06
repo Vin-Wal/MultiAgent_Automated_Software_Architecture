@@ -87,6 +87,7 @@ def _rag_query(collection, user_input: str, top_k: int = 5) -> str:
 
 class RequirementsAgent:
     COLLECTION = "requirements"
+    _SYSTEM = _SYSTEM
 
     def __init__(self, force_reindex: bool = False):
         self._collection = index_corpus(
@@ -95,13 +96,12 @@ class RequirementsAgent:
             force_reindex=force_reindex,
         )
 
-    def run(self, user_input: str, use_rag: bool = True) -> str:
+    def _build_prompt(self, user_input: str, use_rag: bool = True) -> str:
         context_block = ""
         if use_rag:
             raw_context = _rag_query(self._collection, user_input)
             context_block = rag_block(raw_context)
-
-        user_prompt = textwrap.dedent(f"""\
+        return textwrap.dedent(f"""\
             {context_block}
 
             <user_input>
@@ -112,4 +112,5 @@ class RequirementsAgent:
 produce the complete SRS document. Follow the schema exactly.
         """).strip()
 
-        return call_llm(_SYSTEM, user_prompt)
+    def run(self, user_input: str, use_rag: bool = True) -> str:
+        return call_llm(_SYSTEM, self._build_prompt(user_input, use_rag), max_tokens=3000)

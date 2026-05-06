@@ -1,3 +1,5 @@
+from typing import Generator
+
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_exponential
 
@@ -29,6 +31,27 @@ def call_llm(
             if text.endswith("```"):
                 text = text.rsplit("```", 1)[0]
     return text.strip()
+
+
+def call_llm_stream(
+    system: str,
+    user: str,
+    model: str = cfg.LLM_MODEL,
+    max_tokens: int = cfg.MAX_TOKENS,
+) -> Generator[str, None, None]:
+    stream = _client.chat.completions.create(
+        model=model,
+        max_tokens=max_tokens,
+        stream=True,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+    )
+    for chunk in stream:
+        delta = chunk.choices[0].delta.content
+        if delta:
+            yield delta
 
 
 def rag_block(context: str) -> str:
