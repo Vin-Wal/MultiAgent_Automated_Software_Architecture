@@ -1,10 +1,10 @@
 # Multi-Agent Automated Software Architecture
 
-A pipeline that takes a plain-text system description and produces a full architecture package: SRS, architecture document, data model, security critique, diagrams, and a developer brief.
+A pipeline that turns a plain-text system description into a full architecture package: SRS, architecture document, data model, security critique, and diagrams.
 
 ## How it works
 
-Five agents run in sequence with a 2-round critic feedback loop:
+Five agents run in sequence with a critic feedback loop:
 
 ```
 Requirements → Architecture → Data Modeler → Critic
@@ -36,25 +36,28 @@ output/20260503_120000/
 
 - Python 3.10+
 - Node.js 16+ with mmdc: `npm install -g @mermaid-js/mermaid-cli`
-- An OpenAI API key (or any OpenAI-compatible API)
+- An OpenAI API key (or any OpenAI-compatible endpoint)
 
 ## Setup
 
 ```bash
-git clone https://github.com/yassinejebbouri/MultiAgent_Automated_Software_Architecture.git
+git clone https://github.com/Vin-Wal/MultiAgent_Automated_Software_Architecture.git
 cd MultiAgent_Automated_Software_Architecture
 
-# Create virtual environment and install dependencies
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
-# Configure environment
 cp .env.example .env
 ```
 
-Edit `.env` and set:
-- `LLM_API_KEY` — your OpenAI API key
-- `DOCS_ROOT` — absolute path to the folder containing the corpus documents
+Edit `.env`:
+
+| Variable | Description |
+|---|---|
+| `LLM_API_KEY` | Your OpenAI API key |
+| `LLM_BASE_URL` | API base URL (default: `https://api.openai.com/v1`) |
+| `LLM_MODEL` | Model name (default: `gpt-4o-mini`) |
+| `DOCS_ROOT` | Absolute path to the corpus document folder |
 
 ## Running
 
@@ -65,36 +68,68 @@ Edit `.env` and set:
 # Custom scenario
 .venv/bin/python run.py --scenario "Build a healthcare records system with HIPAA compliance"
 
-# Without RAG (faster, less grounded)
+# Without RAG
 .venv/bin/python run.py --no-rag
-
-# Compare RAG vs no-RAG side by side
-.venv/bin/python run.py --compare
 ```
 
-## Corpus documents
+## Corpus
 
-The RAG pipeline reads from four corpora under `DOCS_ROOT`:
+The RAG pipeline reads from four collections under `DOCS_ROOT`:
 
 | Collection | Folder | Contents |
 |---|---|---|
-| requirements | `requirements_docs_processed/` | IEEE 29148, EARS syntax, SRS templates |
-| architecture | `architecture_docs_processed/` | AWS Well-Architected, microservices patterns |
-| data_modeler | `datamodeler_docs/corpus/` | Database design, indexing, CAP theorem |
-| critic | `critic_docs/` | NIST CSF 2.0, OWASP Top 10, STRIDE |
+| `requirements` | `requirements_docs_processed/` | IEEE 29148, EARS syntax, SRS templates |
+| `architecture` | `architecture_docs_processed/` | AWS Well-Architected, microservices patterns |
+| `data_modeler` | `datamodeler_docs/corpus/` | Database design, indexing, CAP theorem |
+| `critic` | `critic_docs/` | NIST CSF 2.0, OWASP Top 10, STRIDE |
 
-If you have raw PDFs to process, run `process_docs.py` first (requires Python 3.12 with docling).
+To process raw PDFs, run `process_docs.py` first (requires Python 3.12 with docling).
 
-## Configuration
+## Streamlit UI
 
-All settings can be overridden via environment variables in `.env`:
+```bash
+.venv/bin/streamlit run app.py
+```
 
-| Variable | Default | Description |
-|---|---|---|
-| `LLM_API_KEY` | — | API key (required) |
-| `LLM_BASE_URL` | `https://api.openai.com/v1` | API base URL |
-| `LLM_MODEL` | `gpt-4o-mini` | Model name |
-| `MAX_TOKENS` | `8192` | Max tokens per LLM call |
-| `DOCS_ROOT` | `../genai_final_project/agent_docs` | Path to corpus documents |
-| `CHROMA_PERSIST_DIR` | `./chroma_db` | ChromaDB storage path |
-| `EMBEDDING_MODEL` | `BAAI/bge-small-en-v1.5` | Embedding model (fastembed) |
+Tabs for each pipeline output, inline diagrams, and a sidebar re-prompt for iterating on results.
+
+## Evaluation
+
+The `eval/` module measures output quality across five dimensions:
+
+**Automated (no LLM cost)**
+- EARS compliance rate
+- NFR measurability
+- Section completeness
+- Decision quality
+- Diagram presence
+
+**LLM-judged**
+- Retrieval precision P@K (in-domain vs hard-negative queries)
+- Faithfulness (RAGAS-style claim verification against the corpus)
+- Answer relevance (fraction of user brief features addressed in SRS)
+- LLM-as-judge (5-dimension rubric, max 12 points, blind scoring)
+
+```bash
+# Full suite on 80 scenarios
+python -m eval.run_eval --scenarios 80
+
+# Skip pipeline re-runs, use cached outputs
+python -m eval.run_eval --scenarios 80 --skip-pipeline
+
+# Retrieval evaluation only
+python -m eval.run_eval --retrieval-only
+```
+
+Results and plots are written to `eval_output/`.
+
+## Key findings (n=20)
+
+| Metric | RAG | No-RAG | Monolithic |
+|---|---|---|---|
+| Structural (automated) | 0.91 | 0.93 | 0.36 |
+| Faithfulness | 0.42 | 0.38 | — |
+| Answer relevance | 0.58 | 0.57 | — |
+| LLM judge (/12) | 11.1 | 11.1 | 11.3 |
+
+Multi-agent vs monolithic: 0.91 vs 0.36 on structural metrics. The LLM judge scores all three conditions similarly because it evaluates prose quality, not format compliance or diagram presence — the dimensions where monolithic fails.

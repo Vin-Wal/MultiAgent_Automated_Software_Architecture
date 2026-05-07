@@ -1,0 +1,42 @@
+{
+  "rag": [
+    {
+      "label": "Ride-Sharing",
+      "total_features": 15,
+      "addressed_features": 12,
+      "score": 0.8
+    },
+    {
+      "label": "Healthcare EHR",
+      "total_features": 15,
+      "addressed_features": 8,
+      "score": 0.5333
+    },
+    {
+      "label": "E-Commerce",
+      "total_features": 15,
+      "addressed_features": 9,
+      "score": 0.6
+    }
+  ],
+  "norag": [
+    {
+      "label": "Ride-Sharing",
+      "total_features": 15,
+      "addressed_features": 11,
+      "score": 0.7333
+    },
+    {
+      "label": "Healthcare EHR",
+      "total_features": 15,
+      "addressed_features": 8,
+      "score": 0.5333
+    },
+    {
+      "label": "E-Commerce",
+      "total_features": 15,
+      "addressed_features": 10,
+      "score": 0.6667
+    }
+  ]
+}

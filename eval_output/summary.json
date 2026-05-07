@@ -1,0 +1,49 @@
+{
+  "retrieval": {
+    "in_domain_p3": 0.3194,
+    "in_domain_p5": 0.325,
+    "hard_neg_p3": 0.0417,
+    "hard_neg_p5": 0.075,
+    "gap_p5": 0.25,
+    "by_collection_in_p5": {
+      "requirements": 0.1333,
+      "architecture": 0.4333,
+      "data_modeler": 0.3,
+      "critic": 0.4333
+    },
+    "by_collection_neg_p5": {
+      "requirements": 0.0,
+      "data_modeler": 0.0,
+      "architecture": 0.0,
+      "critic": 0.3
+    }
+  },
+  "critic_scores": {
+    "rag_mean": 6.74,
+    "norag_mean": 6.96,
+    "n_scenarios": 80
+  },
+  "structural": {
+    "n_scenarios": 80,
+    "rag_mean": 0.9116,
+    "norag_mean": 0.9277,
+    "mono_mean": 0.3603
+  },
+  "faithfulness": {
+    "sample_size": 20,
+    "rag_mean": 0.4245,
+    "norag_mean": 0.3783
+  },
+  "answer_relevance": {
+    "n_scenarios": 80,
+    "rag_mean": 0.5808,
+    "norag_mean": 0.5658
+  },
+  "judge": {
+    "sample_size": 20,
+    "rag_mean": 11.1,
+    "norag_mean": 11.05,
+    "max": 12,
+    "mono_mean": 11.3
+  }
+}

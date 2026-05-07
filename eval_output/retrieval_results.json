@@ -1,0 +1,518 @@
+{
+  "3": [
+    {
+      "description": "Stakeholder and user roles",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "AWS reliability pillar",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "ISO 25010 quality model",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Requirement traceability",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "IEEE 29148 SRS structure",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Measurable NFR examples",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "EARS conditional pattern",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Relational vs document DB",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "API gateway responsibilities",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "CQRS pattern",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 3,
+      "relevant": 3
+    },
+    {
+      "description": "Event-driven vs request-response",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.3333,
+      "retrieved": 3,
+      "relevant": 1
+    },
+    {
+      "description": "Indexing strategies",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Horizontal scalability design",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "CAP theorem implications",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Multi-tenant schema patterns",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "Embedding vs referencing",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 3,
+      "relevant": 3
+    },
+    {
+      "description": "OWASP Top 10 overview",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 3,
+      "relevant": 3
+    },
+    {
+      "description": "NIST CSF Protect function",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "STRIDE threat modeling",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.3333,
+      "retrieved": 3,
+      "relevant": 1
+    },
+    {
+      "description": "NIST SP 800-30 risk scoring",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "Broken authentication mitigations",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.3333,
+      "retrieved": 3,
+      "relevant": 1
+    },
+    {
+      "description": "Microservices decomposition",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "HN: SQL injection \u2192 req",
+      "collection": "requirements",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "HN: Kafka partitioning \u2192 req",
+      "collection": "requirements",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "HN: 3NF steps \u2192 arch",
+      "collection": "architecture",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "HN: NIST CSF functions \u2192 dm",
+      "collection": "data_modeler",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "Defense-in-depth layers",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "3NF normalization",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.6667,
+      "retrieved": 3,
+      "relevant": 2
+    },
+    {
+      "description": "HN: STRIDE controls \u2192 arch",
+      "collection": "architecture",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "HN: microservice comms \u2192 dm",
+      "collection": "data_modeler",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    },
+    {
+      "description": "HN: CAP theorem \u2192 critic",
+      "collection": "critic",
+      "kind": "hard_neg",
+      "precision": 0.3333,
+      "retrieved": 3,
+      "relevant": 1
+    },
+    {
+      "description": "HN: EARS syntax \u2192 critic",
+      "collection": "critic",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 3,
+      "relevant": 0
+    }
+  ],
+  "5": [
+    {
+      "description": "Stakeholder and user roles",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.4,
+      "retrieved": 5,
+      "relevant": 2
+    },
+    {
+      "description": "IEEE 29148 SRS structure",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "EARS conditional pattern",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "Measurable NFR examples",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "AWS reliability pillar",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.4,
+      "retrieved": 5,
+      "relevant": 2
+    },
+    {
+      "description": "Requirement traceability",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.4,
+      "retrieved": 5,
+      "relevant": 2
+    },
+    {
+      "description": "ISO 25010 quality model",
+      "collection": "requirements",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "CQRS pattern",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 5,
+      "relevant": 5
+    },
+    {
+      "description": "Relational vs document DB",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "Event-driven vs request-response",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    },
+    {
+      "description": "API gateway responsibilities",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "Horizontal scalability design",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "Multi-tenant schema patterns",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.4,
+      "retrieved": 5,
+      "relevant": 2
+    },
+    {
+      "description": "CAP theorem implications",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "Embedding vs referencing",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 5,
+      "relevant": 5
+    },
+    {
+      "description": "NIST CSF Protect function",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "OWASP Top 10 overview",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 1.0,
+      "retrieved": 5,
+      "relevant": 5
+    },
+    {
+      "description": "Broken authentication mitigations",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    },
+    {
+      "description": "Microservices decomposition",
+      "collection": "architecture",
+      "kind": "in_domain",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    },
+    {
+      "description": "STRIDE threat modeling",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    },
+    {
+      "description": "Defense-in-depth layers",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "NIST SP 800-30 risk scoring",
+      "collection": "critic",
+      "kind": "in_domain",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    },
+    {
+      "description": "HN: 3NF steps \u2192 arch",
+      "collection": "architecture",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "3NF normalization",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.4,
+      "retrieved": 5,
+      "relevant": 2
+    },
+    {
+      "description": "Indexing strategies",
+      "collection": "data_modeler",
+      "kind": "in_domain",
+      "precision": 0.2,
+      "retrieved": 5,
+      "relevant": 1
+    },
+    {
+      "description": "HN: microservice comms \u2192 dm",
+      "collection": "data_modeler",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: STRIDE controls \u2192 arch",
+      "collection": "architecture",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: Kafka partitioning \u2192 req",
+      "collection": "requirements",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: EARS syntax \u2192 critic",
+      "collection": "critic",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: NIST CSF functions \u2192 dm",
+      "collection": "data_modeler",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: SQL injection \u2192 req",
+      "collection": "requirements",
+      "kind": "hard_neg",
+      "precision": 0.0,
+      "retrieved": 5,
+      "relevant": 0
+    },
+    {
+      "description": "HN: CAP theorem \u2192 critic",
+      "collection": "critic",
+      "kind": "hard_neg",
+      "precision": 0.6,
+      "retrieved": 5,
+      "relevant": 3
+    }
+  ]
+}

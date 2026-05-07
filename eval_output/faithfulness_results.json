@@ -1,0 +1,126 @@
+{
+  "rag": {
+    "ride_sharing": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 7,
+        "score": 0.4667
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 4,
+        "score": 0.2667
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 6,
+        "score": 0.4
+      }
+    },
+    "healthcare_records": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 9,
+        "score": 0.6
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 2,
+        "score": 0.1333
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 4,
+        "score": 0.2667
+      }
+    },
+    "ecommerce": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 10,
+        "score": 0.6667
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 3,
+        "score": 0.2
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 4,
+        "score": 0.2667
+      }
+    }
+  },
+  "norag": {
+    "ride_sharing": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 7,
+        "score": 0.4667
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 1,
+        "score": 0.0667
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 2,
+        "score": 0.1333
+      }
+    },
+    "healthcare_records": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 9,
+        "score": 0.6
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 2,
+        "score": 0.1333
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 7,
+        "score": 0.4667
+      }
+    },
+    "ecommerce": {
+      "architecture": {
+        "label": "architecture",
+        "total_claims": 15,
+        "supported_claims": 10,
+        "score": 0.6667
+      },
+      "srs": {
+        "label": "srs",
+        "total_claims": 15,
+        "supported_claims": 0,
+        "score": 0.0
+      },
+      "data_model": {
+        "label": "data_model",
+        "total_claims": 15,
+        "supported_claims": 7,
+        "score": 0.4667
+      }
+    }
+  }
+}

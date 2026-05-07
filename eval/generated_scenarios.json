@@ -1,0 +1,402 @@
+[
+  {
+    "name": "api_gateway_management_sys",
+    "label": "API Gateway Management",
+    "input": "This system will serve as a centralized API gateway for an organization with over 10 million monthly active users. The primary technical challenge involves managing high traffic loads while ensuring security and compliance with GDPR regulations. Key functional requirements include rate limiting for up to 500 TPS, logging and monitoring of API usage, and dynamic routing to microservices."
+  },
+  {
+    "name": "last_mile_delivery_track",
+    "label": "Last-Mile Delivery Tracking",
+    "input": "Our application is designed for real-time tracking of last-mile deliveries, handling up to 2 million packages daily. A key technical challenge will be integrating various parcel carriers while maintaining a consistent user experience across platforms. We require geolocation features with real-time updates, notifications for delivery status changes, and a dashboard for operational analysis."
+  },
+  {
+    "name": "smart_home_automation_sys",
+    "label": "Smart Home Automation",
+    "input": "This project will provide a home automation platform supporting over 50,000 concurrent smart devices. The scalability of the system is a major technical hurdle, especially in maintaining low latency under heavy loads. Functional requirements include integration with IoT standards, user-friendly mobile app control, and automated routines based on user behavior."
+  },
+  {
+    "name": "court_case_management_app",
+    "label": "Court Case Management",
+    "input": "We are developing a court case management system that will handle up to 5,000 cases per month across multiple jurisdictions. A critical challenge is ensuring compliance with various legal data handling regulations. It must include features such as electronic filing, real-time case tracking, and a secure messaging system between involved parties."
+  },
+  {
+    "name": "crypto_exchange_platform",
+    "label": "Cryptocurrency Exchange",
+    "input": "The system will serve as a cryptocurrency exchange platform supporting trading activities for 1 million users. Major technical challenges include ensuring high transactional throughputs and compliance with financial regulations like AML and KYC. Key features must include a secure wallet infrastructure, real-time trade analytics, and multi-currency support."
+  },
+  {
+    "name": "fleet_management_system",
+    "label": "Fleet Management System",
+    "input": "We are creating a fleet management system that will oversee a network of 1,000 delivery vehicles. A significant technical challenge is real-time vehicle tracking and optimizing routing algorithms for fuel efficiency. Functional requirements include maintenance scheduling, driver performance analytics, and integration with telematics data."
+  },
+  {
+    "name": "grocery_delivery_app",
+    "label": "Grocery Delivery Application",
+    "input": "This grocery delivery application aims to serve 500,000 customers by providing scheduled and on-demand delivery services. A core technical challenge will be managing inventory synchronization across multiple warehouses. Requirements include an intuitive user interface for order management, estimated delivery time calculations, and promotional offer handling."
+  },
+  {
+    "name": "energy_grid_mgmt_sys",
+    "label": "Energy Grid Management",
+    "input": "We are developing an energy grid management system designed to handle data from over 200,000 smart meters. The key challenge is ensuring real-time data processing and anomaly detection for grid reliability. Features must include demand forecasting, load balancing capabilities, and automated reporting for regulatory compliance."
+  },
+  {
+    "name": "observability_platform_dev",
+    "label": "Observability Platform",
+    "input": "This observability platform intends to monitor and analyze data from 50+ microservices in real-time. A principal challenge will be achieving minimal latency in data retrieval and processing under high loads. Functional requirements include customizable dashboards, alerting mechanisms for anomalies, and extensive API integrations."
+  },
+  {
+    "name": "mental_health_app_dev",
+    "label": "Mental Health Application",
+    "input": "We are designing a mental health app targeted at 200,000 users, focusing on providing resources and tracking user progress. A significant technical challenge involves ensuring the security and privacy of sensitive user data in accordance with HIPAA regulations. The app will feature personalized treatment plans, mood tracking, and peer support forums."
+  },
+  {
+    "name": "professional_networking_app",
+    "label": "Professional Networking App",
+    "input": "The system will connect over 1 million professionals for networking and collaboration. Key challenges include scaling databases to handle 10,000 concurrent users and maintaining quick response times under heavy traffic. Compliance with GDPR is required to protect user data. Key functional requirements include a user profile creation feature and an algorithm for matching users based on interests."
+  },
+  {
+    "name": "e_gov_citizen_portal",
+    "label": "E-Government Citizen Portal",
+    "input": "This portal will facilitate access for over 500,000 citizens to essential government services online, reducing in-person visits by 40%. Technical challenges involve ensuring system uptime during peak hours and integrating with legacy systems. The solution must comply with national accessibility standards. We require features for document submission and status tracking for service requests."
+  },
+  {
+    "name": "tax_filing_software",
+    "label": "Tax Filing Software",
+    "input": "Designed to allow 2 million users to file their taxes easily, this system must handle peak usage during tax season with minimal downtime. Security and privacy are paramount, especially under IRS regulations. Key challenges include real-time processing of tax calculations and user authentication. Functional requirements include step-by-step filing guidance and instant error checking."
+  },
+  {
+    "name": "ci_cd_pipeline_platform",
+    "label": "CI/CD Pipeline Platform",
+    "input": "A platform aimed at enabling DevOps teams from 10,000 organizations to automate their deployment processes. Challenges include minimizing deployment latency to under 30 seconds and ensuring compatibility with multiple programming languages. Security practices must comply with OWASP standards. Requirements include real-time build status notifications and integration with popular version control systems."
+  },
+  {
+    "name": "second_hand_goods_market",
+    "label": "Second-Hand Goods Market",
+    "input": "This platform will connect 1 million users to buy and sell second-hand goods, handling thousands of transactions daily. A key challenge is managing fraud prevention effectively. The system must adhere to consumer protection regulations. Features needed include a secure payment gateway and a user review and rating system to enhance trust."
+  },
+  {
+    "name": "music_streaming_service",
+    "label": "Music Streaming Service",
+    "input": "A streaming service aimed at 5 million users, delivering high-quality audio with minimal buffering times. Technical challenges involve managing a distributed content delivery network to maintain latency below 100 ms. Must comply with copyright laws and licensing agreements. Requires user-curated playlists and offline listening capabilities."
+  },
+  {
+    "name": "language_learning_app",
+    "label": "Language Learning App",
+    "input": "An app designed for 2 million language learners, focusing on immersive experiences. Key challenges include maintaining user engagement and adapting content dynamically based on proficiency levels. Compliance with educational standards is necessary. Core features include gamified lessons and a speech recognition tool for pronunciation assessments."
+  },
+  {
+    "name": "esports_tournament_platform",
+    "label": "Esports Tournament Platform",
+    "input": "This platform will host tournaments for over 100,000 esports players, managing real-time score updates and matchmaking. Technical challenges include ensuring low-latency interactions and managing high concurrent usage during peak events. Regulations require adherence to fair play standards. Features should include a live leaderboard and team management tools."
+  },
+  {
+    "name": "property_management_system",
+    "label": "Property Management System",
+    "input": "A system meant to serve over 300 property managers handling more than 10,000 rental units. Challenges include integrating maintenance requests and accounting features into a single platform. Compliance with housing regulations is necessary. Functional requirements consist of a tenant portal for online payments and a maintenance tracking system."
+  },
+  {
+    "name": "real_time_analytics_dashboard",
+    "label": "Real-Time Analytics Dashboard",
+    "input": "This dashboard will provide insights for businesses with up to 10,000 daily users consuming data. Key challenges include processing large datasets in real time with under 2-second latency. Must comply with data privacy laws. Functional requirements are customizable reporting features and real-time data visualization tools."
+  },
+  {
+    "name": "low_code_app_builder_2023",
+    "label": "Low-Code App Builder",
+    "input": "This platform enables users to create fully functional web and mobile applications using a drag-and-drop interface. We aim to support at least 100,000 simultaneous users and achieve a response time of under 200 ms. Key technical challenges include ensuring scalability to accommodate peak loads and integrating with various third-party APIs. The system must comply with data privacy regulations such as GDPR and provide role-based access control features."
+  },
+  {
+    "name": "food_delivery_marketplace",
+    "label": "Food Delivery Marketplace",
+    "input": "Our marketplace connects local restaurants with customers, facilitating online ordering and delivery. We expect to handle upwards of 50,000 daily transactions with an average order value of $30. Technical challenges include real-time order tracking and route optimization for delivery drivers. Additionally, the system must comply with PCI DSS standards for online payments and ensure user data is securely stored."
+  },
+  {
+    "name": "event_management_platform",
+    "label": "Event Management Platform",
+    "input": "This platform allows users to create, manage, and promote events, aiming to serve over 10,000 event organizers. Each event may attract up to 5,000 attendees. Key challenges include integrating payment gateways and managing ticket sales under high traffic. Compliance with accessibility standards (WCAG) is required to ensure usability for all users, along with providing analytics on attendee engagement."
+  },
+  {
+    "name": "benefits_admin_software",
+    "label": "Benefits Administration System",
+    "input": "This system manages employee benefits for organizations with up to 50,000 employees, ensuring compliance with ERISA and ACA regulations. We face challenges related to real-time data synchronization between HR databases and benefits providers, with a goal of processing claims within 24 hours. Key functionalities include automated notifications for eligibility and a self-service portal for employees to view their benefits."
+  },
+  {
+    "name": "customs_clearance_portal",
+    "label": "Customs Clearance Portal",
+    "input": "This portal streamlines the customs clearance process for over 1 million shipments annually, aiming to reduce clearance time to under 2 hours. Major technical challenges include integrating with national customs systems and ensuring compliance with international trade regulations. Additionally, the system will provide users with real-time shipment tracking and event notifications via SMS."
+  },
+  {
+    "name": "game_analytics_platform",
+    "label": "Game Analytics Platform",
+    "input": "Our platform collects and analyzes data from millions of mobile gamers, handling up to 1 billion events per day. Key challenges include ensuring low latency data processing (under 100 ms) and building machine learning models for player retention. The system must comply with COPPA for child data protection and offer detailed dashboards for game developers to assess user engagement metrics."
+  },
+  {
+    "name": "university_student_portal",
+    "label": "University Student Portal",
+    "input": "This student portal supports 30,000 students at a large university for managing courses, grades, and financial aid. We need to handle peak traffic of 5,000 concurrent users, with a goal of loading pages in under 3 seconds. Technical challenges involve integrating legacy systems and providing secure access to student data in compliance with FERPA regulations."
+  },
+  {
+    "name": "insurance_claims_system",
+    "label": "Insurance Claims Processing",
+    "input": "This system automates the processing of insurance claims for a company with over 1 million policyholders, aiming to reduce claim processing time to under 5 days. Challenges include ensuring data integrity and security while integrating with multiple legacy systems. The solution must also comply with regulations such as PCI DSS and provide an intuitive dashboard for claim adjusters."
+  },
+  {
+    "name": "warehouse_management_sys",
+    "label": "Warehouse Management System",
+    "input": "Our warehouse management system will support operations in over 100 warehouses, tracking more than 10 million SKUs annually. We need to ensure real-time inventory updates and manage up to 2,000 transactions per hour. Key challenges include integrating with shipping carriers and maintaining system uptime above 99.9%. Compliance with safety regulations and providing analytics for inventory turnover are also crucial."
+  },
+  {
+    "name": "recommendation_engine_2023",
+    "label": "Recommendation Engine",
+    "input": "This recommendation engine will serve an e-commerce platform with 5 million monthly users, generating personalized product suggestions based on user behavior. We aim to achieve a response time of under 200 ms for recommendations. Key challenges include processing large datasets in real-time and ensuring high accuracy in predictions. The system must also comply with data protection regulations such as GDPR."
+  },
+  {
+    "name": "project_management_tool",
+    "label": "Project Management Hub",
+    "input": "This tool streamlines project tracking and collaboration for teams of up to 500 users. The system must support real-time updates with under 200 ms latency and handle over 10,000 tasks simultaneously. Key technical challenges include integrating with various APIs for time tracking and resource allocation. Compliance with GDPR is necessary due to data retention regulations. Specific functional requirements include Gantt chart visualization and automated progress reporting."
+  },
+  {
+    "name": "freight_forwarding_system",
+    "label": "Freight Forwarding Platform",
+    "input": "Our platform facilitates freight booking and tracking for over 1,000 shipments a day. With a focus on real-time visibility, technical challenges include ensuring data consistency across multiple geographic databases and maintaining high availability with 99.9% uptime. Compliance with Incoterms and customs regulations is essential. Key features should include automated tariff calculations and tracking notifications."
+  },
+  {
+    "name": "document_intelligence_saas",
+    "label": "Document Intelligence Suite",
+    "input": "This SaaS solution processes and analyzes documents for up to 10,000 users, extracting insights and categorizing content. Scalability to handle 250 TPS during peak usage is critical, along with challenges related to natural language processing accuracy. Compliance with HIPAA is required given the sensitive nature of the documents. Functional features must include OCR capabilities and automated tagging for search optimization."
+  },
+  {
+    "name": "online_learning_platform",
+    "label": "Interactive Learning Portal",
+    "input": "An online learning platform aimed at up to 50,000 students, offering courses across various subjects. It must support live streaming with a latency of less than 100 ms and handle concurrent sessions of 5,000 users. Technical challenges include video encoding and responsive design for multiple devices. Compliance with accessibility standards (WCAG 2.1) is mandatory. Features should include progress tracking and certification generation."
+  },
+  {
+    "name": "ml_model_serving_platform",
+    "label": "ML Model Service Hub",
+    "input": "This platform serves machine learning models to support over 1,000 concurrent users, focusing on low-latency predictions under 50 ms. Key challenges arise from model versioning and operationalizing diverse model types. Compliance with data privacy regulations (like CCPA) is necessary. Required functionalities include A/B testing for model performance and automated scaling based on usage."
+  },
+  {
+    "name": "digital_banking_app",
+    "label": "Digital Banking Solutions",
+    "input": "Our digital banking application serves upwards of 100,000 users, offering services like account management and transactions. Security and fraud prevention are significant challenges, particularly in ensuring PCI DSS compliance. The app should provide real-time transaction notifications and support for instant fund transfers under 5 seconds."
+  },
+  {
+    "name": "dating_app_platform",
+    "label": "Dating Connection App",
+    "input": "This dating app targets 500,000 users for matchmaking and messaging services. One of the primary challenges is maintaining user privacy and data protection given GDPR requirements. The app must provide functionalities like user profile verification and match suggestions based on user behavior. API performance should allow for profile updates in under 2 seconds."
+  },
+  {
+    "name": "podcast_hosting_platform",
+    "label": "Podcast Hosting Service",
+    "input": "This platform will host over 10,000 podcasts, accommodating up to 50,000 listeners per show. Technical challenges include managing bandwidth for live streaming and ensuring minimal silences in audio processing. Compliance with copyright laws is critical. Essential features include episode scheduling, analytics for audience engagement, and subscription management."
+  },
+  {
+    "name": "peer_to_peer_lending",
+    "label": "P2P Lending Marketplace",
+    "input": "A peer-to-peer lending platform facilitating loans through 200,000 users, with transactions averaging $10,000 per loan. Regulatory challenges from financial authorities must be addressed for compliance with lending laws. The system should offer loan matching algorithms and risk assessment tools. Transaction processing must occur within 24 hours."
+  },
+  {
+    "name": "multi_tenant_crm",
+    "label": "CRM Multi-Tenant System",
+    "input": "This multi-tenant CRM solution is designed for up to 1,000 businesses, each with unique configurations. Performance challenges include scaling database access with low latency for each tenant. Compliance with data protection regulations is required. Functionalities should include customizable dashboards and robust reporting tools to meet diverse client needs."
+  },
+  {
+    "name": "cold_chain_monitoring_sys",
+    "label": "Cold Chain Monitoring System",
+    "input": "The cold chain monitoring system tracks temperature-sensitive products across a logistics network serving over 1,000 deliveries per day. Key challenges include maintaining real-time monitoring with a maximum latency of 1 second to ensure product integrity. Compliance with FDA regulations is critical. The system must feature automated alerts for temperature deviations and generate compliance reports."
+  },
+  {
+    "name": "coding_bootcamp_platform",
+    "label": "Coding Bootcamp Platform",
+    "input": "This platform is designed for coding bootcamp training with up to 5,000 active users learning programming languages through interactive courses. A major technical challenge involves ensuring an engaging user experience while integrating third-party APIs for real-time coding assessments. The solution must comply with educational standards and provide progress tracking and certification functionalities."
+  },
+  {
+    "name": "stock_trading_dashboard",
+    "label": "Stock Trading Dashboard",
+    "input": "Our stock trading platform caters to 10,000 daily active traders, with a transaction processing speed of up to 1,500 TPS. A significant technical challenge is ensuring low-latency market data feeds while meeting SEC compliance requirements. Functionalities will include real-time analytics, customizable trading strategies, and automated trade execution features."
+  },
+  {
+    "name": "hospital_patient_manager",
+    "label": "Hospital Patient Manager",
+    "input": "The hospital patient management system will serve approximately 2,500 patients daily, streamlining admission, treatment, and discharge workflows. Challenges include integrating with existing electronic health records while ensuring HIPAA compliance. Key functionalities will include appointment scheduling, patient history tracking, and real-time communication with healthcare providers."
+  },
+  {
+    "name": "legal_docs_management_sys",
+    "label": "Legal Document Management",
+    "input": "This legal document management system will handle the storage and retrieval of up to 100,000 documents for a mid-sized law firm. The primary technical challenge is ensuring data security while implementing a fast search capability with an average latency of under 2 seconds. Compliance with GDPR is mandatory, along with functionalities for version control and access permissions."
+  },
+  {
+    "name": "live_streaming_service",
+    "label": "Live Streaming Service",
+    "input": "The live streaming platform aims to support over 50,000 concurrent viewers for various events. A key challenge is maintaining streaming quality at varying network conditions and delivering content with less than 3 seconds of latency. The platform must also comply with copyright regulations and include features like real-time chat and audience interaction tools."
+  },
+  {
+    "name": "hr_management_system",
+    "label": "HR Management System",
+    "input": "Our HR management system will cater to 5,000 employees, integrating various HR functions from recruitment to payroll. Ensuring data integrity and compliance with labor laws presents a significant technical challenge. Functional requirements include employee self-service portals, performance tracking, and compliance reporting capabilities."
+  },
+  {
+    "name": "video_on_demand_service",
+    "label": "Video on Demand Service",
+    "input": "This video-on-demand platform will support up to 100,000 subscribers who can access thousands of titles. A major technical hurdle is handling peak time bandwidth usage while ensuring a smooth streaming experience. Compliance with content licensing agreements is critical, and the service must provide recommendations based on user preferences and viewing history."
+  },
+  {
+    "name": "corporate_lms_platform",
+    "label": "Corporate LMS Platform",
+    "input": "The corporate learning management system will facilitate online training for approximately 8,000 employees across multiple locations. A challenge involves creating a scalable architecture that supports user progress tracking and reporting. The system must meet established corporate compliance standards and feature content customization and integration with third-party training modules."
+  },
+  {
+    "name": "precision_agriculture_tool",
+    "label": "Precision Agriculture Tool",
+    "input": "This tool will help farmers optimize resource usage across 10,000 acres by providing real-time data on soil health and crop conditions. A significant technical challenge is ensuring data accuracy from IoT sensors while managing large datasets efficiently. Key functionalities include data analytics for yield forecasting and automated irrigation control that meets environmental regulations."
+  },
+  {
+    "name": "public_transit_ticketing",
+    "label": "Transit Ticketing System",
+    "input": "This system allows users to purchase and validate tickets for public transit services, serving over 1 million users daily. The key technical challenge lies in integrating real-time validation with existing hardware on buses and trains. Compliance with PCI DSS for payment processing is mandatory, and the system must process at least 200 transactions per second while ensuring latency remains under 200 ms."
+  },
+  {
+    "name": "alumni_network",
+    "label": "Alumni Connection Platform",
+    "input": "This platform connects alumni from various universities to foster networking opportunities, targeting around 500,000 active users. A major technical challenge is ensuring data privacy while facilitating user-generated content. The system should comply with GDPR regulations, and key features include event planning capabilities and a mentorship matching system."
+  },
+  {
+    "name": "emergency_dispatch_system",
+    "label": "Emergency Dispatch Solution",
+    "input": "This emergency dispatch system is designed to manage and allocate resources for lifeline services, expecting to handle approximately 10,000 calls per day. A critical technical challenge involves integrating with various communication channels like voice, SMS, and mobile apps to ensure dispatch efficiency. Compliance with local emergency response protocols is required while maintaining a resolution time of under 5 minutes."
+  },
+  {
+    "name": "multi_vendor_marketplace",
+    "label": "Vendor Marketplace Management",
+    "input": "This system supports a multi-vendor marketplace with anticipated transactions from 1,000 vendors, processing around 50,000 orders daily. A primary challenge is creating a scalable architecture that can support varied vendor APIs and product catalogs. The application must comply with various taxation regulations and support customer reviews and ratings functionality."
+  },
+  {
+    "name": "travel_booking_aggregator",
+    "label": "Travel Booking Aggregator",
+    "input": "This aggregator connects users with over 200 travel providers to simplify the booking of flights, hotels, and rentals, aiming for 15,000 active users daily. Technical challenges include real-time price comparison and data synchronization with external APIs. The platform must meet travel industry compliance standards and offer customizable package offerings."
+  },
+  {
+    "name": "data_lake_management",
+    "label": "Data Lake for Analytics",
+    "input": "This data lake management system will store and process petabytes of data for analytical purposes across multiple departments, serving approximately 5,000 internal users. The main challenge involves optimizing data retrieval times and ensuring data governance. Compliance with HIPAA regulations where necessary is critical, and it should support batch processing of 3 million records per hour."
+  },
+  {
+    "name": "community_forum",
+    "label": "Online Community Forum",
+    "input": "The community forum will host discussions and knowledge sharing among 100,000 users on various topics. The technical challenge lies in managing user-generated content while preventing spamming and abusive behavior. Compliance with COPPA for user data privacy is required, alongside features like upvoting, tagging, and moderation tools."
+  },
+  {
+    "name": "smart_city_traffic",
+    "label": "Smart Traffic Management",
+    "input": "This system aims to optimize traffic flow across 500 intersections in a metropolitan area, processing real-time data from 10,000 sensors. A major technical challenge is integrating machine learning algorithms for predictive traffic modeling. Compliance with urban planning regulations must be observed, and the system needs to respond to realtime traffic conditions with latencies under 1 second."
+  },
+  {
+    "name": "sports_betting_platform",
+    "label": "Sports Betting Application",
+    "input": "This application will allow users to place bets on live sports events, with an initial user base of 50,000 active bettors. Key technical challenges include real-time odds calculation and transaction handling under high load conditions. The platform must adhere to gaming regulations and support features like live updates and payout notifications."
+  },
+  {
+    "name": "fraud_detection_system",
+    "label": "Fraud Detection Framework",
+    "input": "This system is designed to detect fraudulent activity across financial transactions, processing over 2 million transactions per day. Technical challenges include implementing advanced machine learning algorithms for anomaly detection. Compliance with financial regulations like PCI DSS and KYC is mandatory while achieving a false positive rate below 2%."
+  },
+  {
+    "name": "medical_imaging_analysis",
+    "label": "Medical Image Analyzer",
+    "input": "The system will analyze medical images for abnormalities, providing results to over 1,000 radiologists daily. It must process images with a latency of under 2 seconds to facilitate timely diagnoses. Key technical challenges include image processing at scale and ensuring HIPAA compliance for sensitive patient data. Functional requirements include integration with existing PACS systems and generating automated reports."
+  },
+  {
+    "name": "telemedicine_platform",
+    "label": "Telemedicine Solution",
+    "input": "This platform connects 10,000 patients with healthcare providers via video and chat. It must maintain a communication latency of under 1 second to ensure a seamless user experience. The primary challenges involve real-time video streaming and addressing various state telehealth regulations. Specific features required include appointment scheduling, doctor-patient chat history, and prescription management."
+  },
+  {
+    "name": "clinical_trial_management",
+    "label": "Clinical Trial Manager",
+    "input": "The system will manage clinical trials for up to 500 participants, tracking their progress and various data points. A major challenge is ensuring data integrity while complying with FDA regulations. The solution must handle up to 100 transactions per second for data entry and retrieval. Key features include participant recruitment tracking, real-time reporting, and integration with lab systems."
+  },
+  {
+    "name": "multiplayer_online_game",
+    "label": "Game Backend Infrastructure",
+    "input": "This backend system will support a multiplayer online game with up to 100,000 concurrent users, providing real-time data exchange. Scalability and low-latency performance are technical challenges, ensuring a response time of less than 50 milliseconds. It must also handle in-game transactions securely. Functional requirements include player matchmaking, multiplayer session management, and cloud save functionality."
+  },
+  {
+    "name": "expense_management_saas",
+    "label": "Expense Management System",
+    "input": "The SaaS application will assist 20,000 users in managing their expenses and reimbursements. A key challenge is integration with multiple payment gateways while ensuring compliance with financial regulations. The system must process transactions with a throughput of 500 TPS. Key functionalities include receipt scanning, expense reports automation, and budget tracking."
+  },
+  {
+    "name": "subscription_box_service",
+    "label": "Subscription Box Manager",
+    "input": "This service will cater to 50,000 subscribers, delivering curated boxes monthly. Technical hurdles include inventory management and payment processing across multiple regions. The system must support an order processing latency of under 5 seconds. Required features are subscription management, inventory tracking, and customer feedback collection."
+  },
+  {
+    "name": "b2b_procurement_portal",
+    "label": "B2B Procurement System",
+    "input": "The portal will facilitate procurement for up to 1,500 businesses, allowing them to manage and track their purchases. One challenge is ensuring data security and compliance with procurement regulations. The system must handle up to 300 users concurrently with a response time of under 3 seconds. Features required include vendor management, purchase order tracking, and an analytics dashboard."
+  },
+  {
+    "name": "k12_school_management",
+    "label": "K-12 School Manager",
+    "input": "This management system will serve 10,000 students and staff across multiple schools. Key challenges include maintaining data privacy under FERPA regulations while providing a user-friendly experience. The system should support up to 200 concurrent users with a response latency of under 2 seconds. Required functionalities include attendance tracking, grade management, and communication tools between parents and teachers."
+  },
+  {
+    "name": "industrial_iot_monitoring",
+    "label": "IoT Monitoring Platform",
+    "input": "The platform will monitor thousands of industrial devices, collecting data every few seconds. A significant technical challenge is real-time data processing at scale, processing hundreds of thousands of data points per minute. Compliance with industry safety standards is also crucial. Required features include real-time alerts, predictive maintenance analytics, and integration with legacy equipment."
+  },
+  {
+    "name": "connected_vehicle_platform",
+    "label": "Connected Vehicle System",
+    "input": "This platform will support connectivity for 1 million vehicles, providing real-time monitoring and analytics. A main technical challenge involves ensuring robust data transmission with less than 100 milliseconds latency. Compliance with automotive safety regulations is essential. Key functionalities include vehicle health reporting, navigation assistance, and driver behavior analytics."
+  },
+  {
+    "name": "pharmacy_inventory_system",
+    "label": "Pharmacy Inventory System",
+    "input": "The system manages inventory for over 500 pharmacies, ensuring availability and tracking of over 10,000 unique medications. Key challenges include maintaining real-time inventory levels and ensuring compliance with local health regulations. Functional requirements include low-latency updates on stock levels (under 2 seconds) and support for automated reordering when stock falls below a predefined threshold."
+  },
+  {
+    "name": "luxury_goods_auction_site",
+    "label": "Luxury Goods Auction Site",
+    "input": "This platform connects buyers and sellers of high-value luxury items, hosting auctions with an average of 1,000 participants per auction. A technical challenge is ensuring secure transactions and real-time bidding updates within 1 second. The system must comply with anti-money laundering regulations, and functional requirements include user accounts with verified identities and a robust bidding history tracking mechanism."
+  },
+  {
+    "name": "alumni_network_platform",
+    "label": "Alumni Network Platform",
+    "input": "Designed for managing communication and events for over 100,000 alumni from a major university, this platform facilitates networking opportunities and event registrations. Key challenges are ensuring scalability to handle 10,000 concurrent active users and integrating with social media platforms. Functional requirements include a searchable alumni directory and event notification systems that reach users within minutes."
+  },
+  {
+    "name": "customs_clearance_portal_8",
+    "label": "Customs Clearance Portal",
+    "input": "This system streamlines the customs clearance for 200,000 import and export transactions annually. Key technical challenges include integrating with multiple regulatory bodies and ensuring data security during transmission. Compliance with international trade laws is critical, and functional requirements consist of real-time status updates for shipments and automated documentation generation based on user inputs."
+  },
+  {
+    "name": "travel_booking_aggregator_8",
+    "label": "Travel Booking Aggregator",
+    "input": "The aggregator consolidates travel options from over 500 airlines and 1,000 hotels, serving around 300,000 users monthly. A major challenge is ensuring fast response times under heavy load, targeting a 200ms response latency. Compliance with data privacy regulations like GDPR is mandatory, and functional requirements include user-specific recommendations and dynamic pricing updates based on demand."
+  },
+  {
+    "name": "project_management_tool_8",
+    "label": "Project Management Tool",
+    "input": "This project management tool is designed for teams of up to 1,000 users, enabling task tracking and collaboration on projects. A key technical challenge is real-time synchronization of tasks and updates (aiming for under 1 second). The tool must adhere to security standards like ISO 27001, and functional requirements include Gantt chart visualization and team performance analytics."
+  },
+  {
+    "name": "data_lake_management_8",
+    "label": "Data Lake Management Tool",
+    "input": "This tool manages a data lake containing over 100TB of structured and unstructured data, serving insights to over 50 data scientists. Major technical challenges involve scaling storage solutions and implementing efficient querying mechanisms. Compliance with data governance policies is essential, with functional requirements including user-based data access controls and visualization dashboards for monitoring data quality."
+  },
+  {
+    "name": "stock_trading_platform",
+    "label": "Stock Trading Platform",
+    "input": "The platform facilitates trading for approximately 1 million users, handling up to 500 transactions per second. A critical technical challenge is ensuring low-latency execution (under 100ms) and managing high-frequency trading scenarios. Compliance with FINRA regulations is required, and functional requirements include real-time market data feeds and advanced analytics for users to track their portfolios."
+  },
+  {
+    "name": "live_streaming_service_8",
+    "label": "Live Streaming Service",
+    "input": "This service supports live broadcasts to up to 250,000 concurrent viewers, focused on gaming and entertainment content. Technical challenges relate to adaptive bitrate streaming and ensuring minimal latency under peak loads. Compliance with content regulation laws is necessary, with functional requirements that include interactive chat features and robust user moderation tools."
+  },
+  {
+    "name": "fraud_detection_system_8",
+    "label": "Fraud Detection System",
+    "input": "The system processes transactions for over 2 million users daily, identifying potentially fraudulent activities in real-time. A key technical challenge is implementing machine learning algorithms that can analyze vast datasets quickly (within a few seconds). Compliance with PCI DSS standards is necessary, and functional requirements include detailed reporting of flagged transactions and automated alerts for suspicious activity."
+  }
+]
