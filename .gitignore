@@ -9,3 +9,5 @@ output/
 .claude/
 diagrams/
 eval_output/*/
+!eval_output/plots/
+!eval_output/plots/**
