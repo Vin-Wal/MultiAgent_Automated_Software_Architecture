@@ -1,3 +1,4 @@
+import logging
 from dataclasses import dataclass, field
 
 from agents import (
@@ -8,6 +9,8 @@ from agents import (
     CriticAgent,
 )
 from agents.critic_agent import extract_action_items
+
+log = logging.getLogger(__name__)
 
 PASS_THRESHOLD = 7
 
@@ -43,55 +46,60 @@ class Pipeline:
 
         if requirements_override is not None:
             result.requirements = requirements_override
-            print("[Pipeline] Using requirements override.")
+            log.info("Using requirements override.")
         else:
-            print("[Pipeline] Step 1/5 — RequirementsAgent ...")
+            log.info("Step 1/5 — RequirementsAgent")
             try:
                 result.requirements = self.requirements_agent.run(user_input, use_rag=use_rag)
             except Exception as e:
+                log.error("RequirementsAgent failed: %s", e)
                 result.errors["requirements"] = str(e)
                 return result
 
-        print("[Pipeline] Step 2/5 — ArchitectureAgent (round 1) ...")
+        log.info("Step 2/5 — ArchitectureAgent (round 1)")
         try:
             result.architecture = self.architecture_agent.run(
                 result.requirements, use_rag=use_rag
             )
         except Exception as e:
+            log.error("ArchitectureAgent failed: %s", e)
             result.errors["architecture"] = str(e)
             return result
 
-        print("[Pipeline] Step 3/5 — DataModelerAgent (round 1) ...")
+        log.info("Step 3/5 — DataModelerAgent (round 1)")
         try:
             result.data_model = self.data_modeler_agent.run(
                 result.requirements, result.architecture, use_rag=use_rag
             )
         except Exception as e:
+            log.error("DataModelerAgent failed: %s", e)
             result.errors["data_model"] = str(e)
             return result
 
-        print("[Pipeline] Step 4/5 — CriticAgent (round 1) ...")
+        log.info("Step 4/5 — CriticAgent (round 1)")
         try:
             result.critique, result.score = self.critic_agent.run(
                 result.requirements, result.architecture, result.data_model, use_rag=use_rag
             )
         except Exception as e:
+            log.error("CriticAgent failed: %s", e)
             result.errors["critic"] = str(e)
             return result
 
         result.rounds = 1
-        print(f"[Pipeline] Critic score: {result.score}/10")
+        log.info("Critic score: %d/10", result.score)
 
         if result.score < PASS_THRESHOLD:
-            print(f"[Pipeline] Score {result.score} < {PASS_THRESHOLD} — running round 2 ...")
+            log.info("Score %d < %d — running round 2", result.score, PASS_THRESHOLD)
             action_items = extract_action_items(result.critique)
-            print(f"[Pipeline] Injecting {len(action_items.splitlines())} action items into round 2.")
+            log.info("Injecting %d action items into round 2", len(action_items.splitlines()))
 
             try:
                 result.architecture = self.architecture_agent.run(
                     result.requirements, use_rag=use_rag, prior_critique=action_items,
                 )
             except Exception as e:
+                log.error("ArchitectureAgent round 2 failed: %s", e)
                 result.errors["architecture_r2"] = str(e)
 
             try:
@@ -100,6 +108,7 @@ class Pipeline:
                     use_rag=use_rag, prior_critique=action_items,
                 )
             except Exception as e:
+                log.error("DataModelerAgent round 2 failed: %s", e)
                 result.errors["data_model_r2"] = str(e)
 
             try:
@@ -110,18 +119,20 @@ class Pipeline:
                 result.critique = critique2
                 result.score    = score2
             except Exception as e:
+                log.error("CriticAgent round 2 failed: %s", e)
                 result.errors["critic_r2"] = str(e)
 
             result.rounds = 2
-            print(f"[Pipeline] Critic score after round 2: {result.score}/10")
+            log.info("Critic score after round 2: %d/10", result.score)
         else:
-            print(f"[Pipeline] Score {result.score} >= {PASS_THRESHOLD} — skipping round 2.")
+            log.info("Score %d >= %d — skipping round 2", result.score, PASS_THRESHOLD)
 
-        print("[Pipeline] Step 5/5 — DiagramAgent ...")
+        log.info("Step 5/5 — DiagramAgent")
         try:
             result.diagrams = self.diagram_agent.run(result.architecture, result.data_model)
         except Exception as e:
+            log.error("DiagramAgent failed: %s", e)
             result.errors["diagrams"] = str(e)
 
-        print(f"[Pipeline] Done. Rounds: {result.rounds}, final score: {result.score}/10")
+        log.info("Done. Rounds: %d, final score: %d/10", result.rounds, result.score)
         return result

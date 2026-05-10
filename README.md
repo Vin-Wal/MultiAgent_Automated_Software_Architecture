@@ -1,41 +1,41 @@
 # Multi-Agent Automated Software Architecture
 
-A pipeline that turns a plain-text system description into a full architecture package: SRS, architecture document, data model, security critique, and diagrams.
+Takes a plain-text system description and produces a complete architecture package: SRS, architecture document, data model, security critique, and diagrams.
 
-## How it works
+## What it does
 
-Five agents run in sequence with a critic feedback loop:
+Five specialized agents run in sequence. A critic scores the output and, if the score is below 7/10, the architecture and data model agents run a second time with the critique injected as context.
 
 ```
 Requirements → Architecture → Data Modeler → Critic
-                                                ↓
-                                         score ≥ 7 → Diagram → Developer Brief
-                                         score < 7 → round 2 → Diagram → Developer Brief
+                                                │
+                                         score ≥ 7 ──→ Diagrams → output/
+                                         score < 7 ──→ round 2  → Diagrams → output/
 ```
 
-Each agent retrieves relevant chunks from a local knowledge base (RAG) to ground its output in established standards and patterns.
+Each agent pulls relevant chunks from a local vector store (ChromaDB + BAAI/bge-small-en-v1.5) so its output is grounded in real standards — IEEE 29148, EARS syntax, AWS Well-Architected, NIST CSF 2.0, OWASP Top 10.
 
 ## Output
 
-Every run produces a timestamped folder under `output/`:
+Each run writes a timestamped folder under `output/`:
 
 ```
 output/20260503_120000/
   srs.md               — Software Requirements Specification
-  architecture.xml     — Architecture document
+  architecture.xml     — Architecture document with design decisions
   data_model.xml       — Data model with DDL schemas
   critique.md          — Security and architecture review
   diagrams/
     architecture.png   — Component diagram
     sequence.png       — Sequence diagram
     er.png             — Entity-relationship diagram
-  DEVELOPER_BRIEF.md   — Full developer brief
+  DEVELOPER_BRIEF.md   — Developer handoff document
 ```
 
-## Prerequisites
+## Requirements
 
 - Python 3.10+
-- Node.js 16+ with mmdc: `npm install -g @mermaid-js/mermaid-cli`
+- Node.js 16+ with `mmdc` for diagram rendering: `npm install -g @mermaid-js/mermaid-cli`
 - An OpenAI API key (or any OpenAI-compatible endpoint)
 
 ## Setup
@@ -48,13 +48,14 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
 cp .env.example .env
+# edit .env — set LLM_API_KEY and DOCS_ROOT at minimum
 ```
 
-Edit `.env`:
+`.env` variables:
 
 | Variable | Description |
 |---|---|
-| `LLM_API_KEY` | Your OpenAI API key |
+| `LLM_API_KEY` | OpenAI API key |
 | `LLM_BASE_URL` | API base URL (default: `https://api.openai.com/v1`) |
 | `LLM_MODEL` | Model name (default: `gpt-4o-mini`) |
 | `DOCS_ROOT` | Absolute path to the corpus document folder |
@@ -62,19 +63,30 @@ Edit `.env`:
 ## Running
 
 ```bash
-# Default scenario (ride-sharing platform)
+# Default scenario
 .venv/bin/python run.py
 
 # Custom scenario
 .venv/bin/python run.py --scenario "Build a healthcare records system with HIPAA compliance"
 
-# Without RAG
+# Skip RAG (no vector store lookup)
 .venv/bin/python run.py --no-rag
+
+# Force corpus re-index after updating documents
+.venv/bin/python run.py --force-reindex
 ```
+
+## Streamlit UI
+
+```bash
+.venv/bin/streamlit run app.py
+```
+
+Tabs show each pipeline output. The sidebar lets you re-run with a modified prompt without re-indexing.
 
 ## Corpus
 
-The RAG pipeline reads from four collections under `DOCS_ROOT`:
+Four ChromaDB collections, one per agent:
 
 | Collection | Folder | Contents |
 |---|---|---|
@@ -83,47 +95,39 @@ The RAG pipeline reads from four collections under `DOCS_ROOT`:
 | `data_modeler` | `datamodeler_docs/corpus/` | Database design, indexing, CAP theorem |
 | `critic` | `critic_docs/` | NIST CSF 2.0, OWASP Top 10, STRIDE |
 
-To process raw PDFs, run `process_docs.py` first (requires Python 3.12 with docling).
+To process raw PDFs into the corpus, run `process_docs.py` first (requires Python 3.12 with `docling`).
 
-## Streamlit UI
-
-```bash
-.venv/bin/streamlit run app.py
-```
-
-Tabs for each pipeline output, inline diagrams, and a sidebar re-prompt for iterating on results.
+Collections are indexed once and reused on subsequent runs. Delete the `chroma_data/` directory if you need to start fresh.
 
 ## Evaluation
 
-The `eval/` module measures output quality across five dimensions:
+The `eval/` module measures output quality:
 
 **Automated (no LLM cost)**
 - EARS compliance rate
 - NFR measurability
 - Section completeness
-- Decision quality
-- Diagram presence
+- Decision quality (rationale + trade-offs present)
 
 **LLM-judged**
-- Retrieval precision P@K (in-domain vs hard-negative queries)
-- Faithfulness (RAGAS-style claim verification against the corpus)
-- Answer relevance (fraction of user brief features addressed in SRS)
-- LLM-as-judge (5-dimension rubric, max 12 points, blind scoring)
+- Retrieval precision P@K
+- Faithfulness (claim verification against the corpus)
+- Answer relevance (user brief features covered in SRS)
+- LLM-as-judge rubric (5 dimensions, max 12 points)
 
 ```bash
-# Full suite on 80 scenarios
 python -m eval.run_eval --scenarios 80
 
-# Skip pipeline re-runs, use cached outputs
+# Use cached pipeline outputs, skip re-running agents
 python -m eval.run_eval --scenarios 80 --skip-pipeline
 
-# Retrieval evaluation only
+# Retrieval metrics only
 python -m eval.run_eval --retrieval-only
 ```
 
-Results and plots are written to `eval_output/`.
+Results and plots go to `eval_output/`.
 
-## Key findings (n=20)
+## Results (n=20)
 
 | Metric | RAG | No-RAG | Monolithic |
 |---|---|---|---|
@@ -132,4 +136,16 @@ Results and plots are written to `eval_output/`.
 | Answer relevance | 0.58 | 0.57 | — |
 | LLM judge (/12) | 11.1 | 11.1 | 11.3 |
 
-Multi-agent vs monolithic: 0.91 vs 0.36 on structural metrics. The LLM judge scores all three conditions similarly because it evaluates prose quality, not format compliance or diagram presence — the dimensions where monolithic fails.
+Multi-agent vs monolithic on structural metrics: 0.91 vs 0.36. The LLM judge scores all three conditions similarly because it evaluates prose quality — not format compliance or diagram presence, which is where the monolithic baseline falls short.
+
+## Tests
+
+```bash
+python -m pytest tests/ -v
+```
+
+Tests cover the semantic chunker and structural metrics. They run without any model downloads (fastembed and chromadb are stubbed).
+
+## Troubleshooting
+
+See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common errors.
